@@ -1,0 +1,49 @@
+import random
+    import sys
+    print("Welcome to Cows and Bulls Game")
+    num = (input("Enter a two digit number: "))
+    ran = []
+    n = 0
+    cows = 0
+    bulls = 0
+    cond = True
+    if len(num)==2:
+        pass
+    else:
+        print("Invalid input")
+        sys.exit()
+
+    ran = (random.sample(range(1, 9), 2))
+    ran = ''. join(str(ele) for ele in ran)
+    num = str(num)
+    ran = str(ran)
+    while (cond is True):
+        for i in range(0, 2):
+            if (num[i]) == (ran[i]):
+                cows += 1
+            else:
+                bulls += 1
+        print("Cows - ", cows)
+        print("Bulls - ", bulls)
+        print("The random number is", ran)
+        n += 1
+        if (cows == 2):
+            print("you won in %d attempts.....!!!! CONGRATS", n)
+            cond = False
+            sys.exit()
+        else:
+            num = (input("\nYou lost\nEnter another two digit number: "))
+            ran = []
+            cows = 0
+            bulls = 0
+            cond = True
+            if len(num) == 2:
+                pass
+            else:
+                print("Invalid input")
+                sys.exit()
+
+            ran = (random.sample(range(1, 9), 2))
+            ran = ''.join(str(ele) for ele in ran)
+            num = str(num)
+            ran = str(ran)
